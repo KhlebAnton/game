@@ -16,22 +16,55 @@ body {
     justify-content: center;
 }
 
-.game {
+#game {
     width: 90%;
     height: 90%;
     background-color: azure;
     position: relative;
 }
+#game_menu {
+    width: 90%;
+    height: 90%;
+    background-color: #00000041;
+    position: absolute;
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+}
+#game_win {
+    width: 90%;
+    height: 90%;
+    background-color: #00000041;
+    position: absolute;
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+}
 
 #player {
     width: 200px;
     height: 200px;
-    background: url('img/1-big-beg.gif') 50% / contain no-repeat;
+    background: url('img/player.png') 50% / contain no-repeat;
 
     position: absolute;
     bottom: 0;
 }
-
+#player.go {
+    background: url('img/1-big-beg.gif') 50% / contain no-repeat;
+}
+#gift {
+    width: 50px;
+    height: 50px;
+    background: red;
+    position: absolute;
+    bottom: 200px;
+    right: -50%;
+}
+#gift.go_coin {
+    animation: danger_lite 2s linear;
+}
 .porttrai {
     display: none;
    
@@ -46,12 +79,23 @@ body {
     background: #000;
     position: absolute;
     bottom: 0;
-    right: -10%;
-    animation: danger 2s linear  infinite 1s;
+    right: -50%;
 }
-@keyframes danger {
+.lite {
+    animation: danger_lite 2s linear infinite;
+}
+#game_menu.hidden {
+    display: none;
+}
+#game_win.hidden {
+    display: none;
+}
+#game.hidden {
+    display: none;
+}
+@keyframes danger_lite {
     to {
-        right: 130%;
+        right: 120%;
     }
 }
 @keyframes jump {
@@ -73,7 +117,7 @@ body {
 }
 
 @media screen and (orientation: portrait) {
-    .game {
+    #game {
         display: none;
     }
 

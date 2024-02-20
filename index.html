@@ -7,10 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game">
+    
+    <div id="game">
+        <div id="score">0</div>
         <div id="player"></div>
         <div id="gift"></div>
         <div id="danger"></div>
+    </div>
+    <div id="game_menu" class="game_menu">
+        <h1 onclick="gameStart()">START</h1>
+    </div>
+    <div id="game_win" class="game_win hidden">
+        <h1>Win!</h1>
+        <h2 onclick="gameStart()">START</h2>
     </div>
     <div class="porttrai">
         <h1>Переверни телефон</h1>
