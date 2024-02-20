@@ -1,3 +1,11 @@
+document.body.style.height = window.innerHeight + 'px';
+
+window.addEventListener('resize', function() {
+  document.body.style.height = window.innerHeight + 'px';
+});
+
+
+
 const player = document.getElementById('player');
 const danger = document.getElementById('danger');
 
