@@ -95,7 +95,7 @@ function gameStart() {
             soundCoin.play();
             score.textContent++;
             gift.classList.remove('go_coin')
-            if(score.textContent == 2) {
+            if(score.textContent == 3) {
                 game_win.classList.remove('hidden');
                 game.classList.add('hidden');
                 
