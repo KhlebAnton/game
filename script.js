@@ -45,35 +45,53 @@ function goDangerLite() {
         },2000) 
     }
 }
+function rand(min, max){
+    return (max-min)*Math.random()+min
+}
+     
 
-
+function goMenu() {
+    location.reload()
+}
 function gameStart() {
+    score.textContent = 0;
     menu.classList.add('hidden')
+    
     player.classList.add('go');
-    setInterval(() => {
+    game.classList.remove('hidden')
+    
+    let goDangerInterval = setInterval(() => {
         goDangerLite();
-    }, 500);
-    setInterval(() => {
+    }, rand(2000,3000));
+    let goCoinInterval = setInterval(() => {
         goCoin();
-    }, 4210);
+    }, rand(3000,10000))
+    ;
 
     
     
     
     setInterval(() => {
-
-        if(danger.offsetLeft <= (player.offsetWidth - 50) && danger.offsetLeft > 20 && player.offsetTop > 120)  {
+        
+       
+        if(danger.offsetLeft <= (player.offsetWidth - 50) && danger.offsetLeft > 20 && player.offsetTop + player.offsetHeight > danger.offsetTop + 25)  {
+            player.classList.remove('go');
+            let answer = confirm('game over! Давай еще?');
+            if (answer) {
+                location.reload()
+            } else {
+                window.close()
+            }
             
-            alert('game over');
-            location.reload()
         }
-        if(gift.offsetLeft <= (player.offsetWidth - 100) && gift.offsetLeft > 50 && player.offsetTop < 120)  {
+        if(gift.offsetLeft <= (player.offsetWidth - 100) && gift.offsetLeft > 50 && player.offsetTop <= gift.offsetTop)  {
             
             score.textContent++;
             gift.classList.remove('go_coin')
             if(score.textContent == 2) {
-                game_win.classList.remove('hidden')
-                game.classList.add('hidden')
+                game_win.classList.remove('hidden');
+                game.classList.add('hidden');
+                
             }
             
         }
