@@ -58,6 +58,7 @@ function gameStart() {
     menu.classList.add('hidden')
     
     player.classList.add('go');
+    game.classList.add('animate_back')
     game.classList.remove('hidden')
     
     let goDangerInterval = setInterval(() => {
