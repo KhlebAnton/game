@@ -13,12 +13,27 @@ const score = document.getElementById('score');
 const menu = document.getElementById('game_menu');
 const game_win = document.getElementById('game_win');
 const game = document.getElementById('game');
+const music = document.getElementById('music');
 
-
-
+function playMusic(){
+    music.play()
+}
+function onJump() {
+    let audioJump = new Audio('sound/jump.mp3');
+    audioJump.volume= 0.2;
+    audioJump.play(); 
+    
+}
+function onCoin() {
+    let audioCoin = new Audio('sound/coin.mp3');
+    audioCoin.volume= 0.2;
+    audioCoin.play(); 
+    
+}
 function jump() {
     if(!player.classList.contains('jump')) {
         player.classList.add ("jump");
+        onJump();
         setTimeout( function() {
             player.classList.remove ("jump")
         },800) 
@@ -86,7 +101,7 @@ function gameStart() {
             
         }
         if(gift.offsetLeft <= (player.offsetWidth - 100) && gift.offsetLeft > 50 && player.offsetTop <= gift.offsetTop)  {
-            
+            onCoin();
             score.textContent++;
             gift.classList.remove('go_coin')
             if(score.textContent == 2) {

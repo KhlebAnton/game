@@ -7,23 +7,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <audio id="music" src="sound/music.mp3" loop preload="auto" a></audio>
+    <div class="preolad"></div>
     <div id="game">
         <div id="score">0</div>
         <div id="player"></div>
-        <div id="gift"></div>
-        <div id="danger"></div>
+        <div id="gift"><img style="height: 100%;" src="img/card.gif" alt=""></div>
+        <div id="danger"><img style="height: 100%;" src="img/alin.gif" alt=""></div>
     </div>
     <div id="game_menu" class="game_menu">
-        <p>Привет! В этот момент тусовка у Насти в честь ее ДР! И кто то разбросал по дому все фотографии с этой вечеринки. Помоги Насте все это собрать!
+        <p>Привет! В этот момент тусовка у Насти в честь ее ДР! И кто то разбросал по дому все фотографии с этой вечеринки. Помоги Насте все это собрать! Надо вроде 3..
             <br><span>НО осторожно! Не потревожь Алинку</span>
         </p>
-        <h1 onclick="gameStart()">START</h1>
+        <h1 onclick="gameStart(), playMusic()">START</h1>
     </div>
     <div id="game_win" class="game_win hidden">
-        <h1>Win!</h1>
-        <h2 onclick="goMenu()">Menu</h2>
+        <h1>Winner!</h1>
+        <p>Ура! Ты собрала карточки, чтобы никто из твоих подружек домой их не скрысил! <span>Кстати, с ДР!</span></p>
+        <h2 class="again" onclick="goMenu()">Menu</h2>
     </div>
+
+
     <div class="porttrai">
         <h1>Переверни телефон</h1>
     </div>
